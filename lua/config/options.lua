@@ -4,3 +4,8 @@
 local opt = vim.opt
 
 opt.clipboard = ""
+
+-- configuration for neovide
+if vim.g.neovide then
+  vim.o.guifont = "终端更纱黑体-简 Nerd:h12"
+end
