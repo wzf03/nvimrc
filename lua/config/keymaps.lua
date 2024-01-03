@@ -5,7 +5,9 @@
 local map = vim.keymap.set
 
 -- solve problems on Redmibook Pro 15
-map("", "<kEnter>", "<Enter>", {})
+vim.api.nvim_set_keymap("", "<kEnter>", "<Enter>", {})
+vim.api.nvim_set_keymap("i", "<kEnter>", "<Enter>", {})
+vim.api.nvim_set_keymap("c", "<kEnter>", "<Enter>", {})
 
 -- yank and paste from system clipboard
 map("v", "<leader>y", '"+y', { desc = "Yank to system clipboard" })
