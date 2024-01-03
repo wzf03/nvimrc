@@ -4,6 +4,7 @@
 local opt = vim.opt
 
 opt.clipboard = ""
+opt.spelllang = {}
 
 -- configuration for neovide
 if vim.g.neovide then
