@@ -1,6 +1,6 @@
 return {
   {
-    "iurimateus/luasnip-latex-snippets.nvim",
+    "wzf03/luasnip-latex-snippets.nvim",
     ft = { "tex", "markdown" },
     -- vimtex isn't required if using treesitter
     dependencies = {
