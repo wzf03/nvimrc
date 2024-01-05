@@ -6,6 +6,14 @@ return {
   {
     "windwp/nvim-autopairs",
     event = "InsertEnter",
-    opts = {}, -- this is equalent to setup({}) function
+    config = function(_, _)
+      local npairs = require("nvim-autopairs")
+      npairs.setup({
+        -- check_ts = true,
+        -- ts_config = {
+        --   markdown_inline = { "latex_block" },
+        -- },
+      })
+    end,
   },
 }
