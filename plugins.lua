@@ -48,6 +48,24 @@ local plugins = {
     config = function() end, -- Override to setup mason-lspconfig
   },
 
+  -- terminal
+  {
+    "NvChad/nvterm",
+    disabled = true,
+  },
+
+  {
+    "akinsho/toggleterm.nvim",
+    event = "BufEnter",
+    opts = {
+      direction = "float"
+    },
+    config = function (_, opts)
+      require("toggleterm").setup(opts)
+      require("core.utils").load_mappings "toggleterm"
+    end
+  },
+
   -- markdown
   {
     "wzf03/luasnip-latex-snippets.nvim",
@@ -71,9 +89,9 @@ local plugins = {
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
-    config = function (_, _)
+    config = function(_, _)
       require("core.utils").load_mappings "markdownpreview"
-    end
+    end,
   },
 
   {
