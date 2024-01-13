@@ -10,4 +10,18 @@ M.clipboard = {
   },
 }
 
+M.imgclip = {
+  plugin = true,
+  n = {
+    ["<leader>ip"] = { "<cmd>PasteImage<cr>", "Paste clipboard image" },
+  },
+}
+
+M.markdownpreview = {
+  plugin = true,
+  n = {
+    ["<leader>mp"] = { "<cmd>MarkdownPreview<cr>", "Markdown Preview" },
+  },
+}
+
 return M

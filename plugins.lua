@@ -71,22 +71,18 @@ local plugins = {
     build = function()
       vim.fn["mkdp#util#install"]()
     end,
-    keys = {
-      {
-        "<leader>mp",
-        "<cmd>MarkdownPreview<cr>",
-        desc = "Markdown Preview",
-      },
-    },
+    config = function (_, _)
+      require("core.utils").load_mappings "markdownpreview"
+    end
   },
 
   {
     "wzf03/img-clip.nvim",
-    event = "BufEnter",
-    opts = {},
-    keys = {
-      { "<leader>ip", "<cmd>PasteImage<cr>", desc = "Paste clipboard image" },
-    },
+    ft = { "markdown", "tex" },
+    config = function(_, opts)
+      require("core.utils").load_mappings "imgclip"
+      require("img-clip").setup(opts)
+    end,
   },
 }
 
