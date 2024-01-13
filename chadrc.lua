@@ -1,6 +1,11 @@
 local M = {}
 
-M.ui = { theme = "ayu_dark" }
+M.ui = {
+  theme = "gruvbox",
+  nvdash = {
+    load_on_startup = true,
+  }
+}
 M.plugins = "custom.plugins"
 M.mappings = require "custom.mappings"
 

@@ -51,19 +51,37 @@ local plugins = {
   -- terminal
   {
     "NvChad/nvterm",
-    disabled = true,
+    enabled = false,
   },
 
   {
     "akinsho/toggleterm.nvim",
     event = "BufEnter",
     opts = {
-      direction = "float"
+      direction = "float",
     },
-    config = function (_, opts)
+    config = function(_, opts)
       require("toggleterm").setup(opts)
       require("core.utils").load_mappings "toggleterm"
-    end
+    end,
+  },
+
+  -- nvim-tree
+  {
+    "nvim-tree/nvim-tree.lua",
+    opts = {
+      git = {
+        enable = true,
+      },
+      renderer = {
+        icons = {
+          show = {
+            git = true,
+          },
+          git_placement = "after",
+        },
+      },
+    },
   },
 
   -- markdown
