@@ -5,3 +5,5 @@ require "nvchad.options"
 local o = vim.o
 -- o.cursorlineopt ='both' -- to enable cursorline!
 o.clipboard = ""
+
+vim.g.lua_snippets_path = vim.fn.stdpath "config" .. "/lua/lua_snippets"
